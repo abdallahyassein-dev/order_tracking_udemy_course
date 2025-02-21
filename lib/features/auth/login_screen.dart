@@ -21,7 +21,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
-  late TextEditingController username;
+  late TextEditingController email;
   late TextEditingController password;
 
   @override
@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
     // TODO: implement initState
     super.initState();
 
-    username = TextEditingController();
+    email = TextEditingController();
     password = TextEditingController();
   }
 
@@ -69,14 +69,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const HeightSpace(32),
-              Text("User Name", style: AppStyles.black16w500Style),
+              Text("Email", style: AppStyles.black16w500Style),
               const HeightSpace(8),
               CustomTextField(
-                controller: username,
-                hintText: "Enter Your User Name",
+                controller: email,
+                hintText: "Enter Your Email",
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return "Enter Your User Name";
+                    return "Enter Your Email";
                   }
                   return null;
                 },
